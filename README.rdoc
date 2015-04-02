@@ -26,3 +26,8 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+
+Release:
+Plan to use  Phusion Passenger + nginx.
+Visit 'https://www.phusionpassenger.com/documentation/Users%20guide%20Nginx.html' for more information, should be very easy.
+Default database, postgresql is OK, suggest to migrate to MySQL in the future.
