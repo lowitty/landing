@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'landings#index'
   post '/info-upload', to: "landings#savemail"
+  get '/info-upload', to: "landings#index"
+  get '/mails', to: "landings#show"
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

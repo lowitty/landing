@@ -5,4 +5,8 @@ class LandingsController < ApplicationController
     @res = @mailinfo.save
     @test = 1
   end
+  
+  def show
+    @mailinfos = Mailinfo.all
+  end
 end

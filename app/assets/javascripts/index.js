@@ -1,5 +1,5 @@
 $(document).ready(function() {
-	console.log($('form.email-upload'));
+	//console.log($('form.email-upload'));
   return $('form.email-upload').validate({
     rules: {
       email: {
