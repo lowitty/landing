@@ -1,0 +1,22 @@
+<div class='main container center-horizontal'>
+	<% if @mailinfo.errors.any? %>
+	    
+	<div id="error_explanation">
+		      <!--<h2><%= pluralize(@mailinfo.errors.count, "error") %> prohibited
+		        this article from being saved:
+		      </h2>-->
+		      
+		<div class="footer center-horizontal">
+			<!--<% @mailinfo.errors.full_messages.each do |msg| %>  -->        
+			<a href='#'>
+				已经保存了您的邮箱，不需要再次提交。
+				<!--<%= msg %>-->
+			</>
+			<% end %>
+			      
+		</div>
+		    
+	</div>
+	  <% end %>
+	<div class="footer center-horizontal"><a href="#">感谢您的参与，更多信息敬请期待！</a></div>
+</div>
