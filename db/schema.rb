@@ -64,12 +64,6 @@ ActiveRecord::Schema.define(version: 20150402152343) do
 
   add_index "comments", ["ancestry"], name: "index_comments_on_ancestry", using: :btree
 
-  create_table "mail_infos", force: :cascade do |t|
-    t.string   "email",      limit: 255
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "mailinfos", force: :cascade do |t|
     t.string   "email"
     t.datetime "created_at", null: false
