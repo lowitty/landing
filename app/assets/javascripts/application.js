@@ -15,7 +15,6 @@
  */
 //= require jquery
 //= require jquery-validation/jquery.validate
-//= require index
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
