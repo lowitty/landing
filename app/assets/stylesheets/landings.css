@@ -1,0 +1,121 @@
+// Place all the styles related to the Landings controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+/* line 3, ../../sass/_layout.scss */
+.center-vertical {
+  display: block;
+  position: relative;
+  top: 50%;
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+/* line 10, ../../sass/_layout.scss */
+.center-horizontal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* line 8, ../../sass/export/index.scss */
+body, html, .main.container {
+  height: 100%;
+}
+
+/* line 12, ../../sass/export/index.scss */
+body {
+  background: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjgiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZmZmZmYiIHN0b3Atb3BhY2l0eT0iMC44Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g'), url('bg.png');
+  background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, rgba(255, 255, 255, 0.8)), color-stop(100%, rgba(255, 255, 255, 0.8))), url('bg.png');
+  background: -moz-linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('bg.png');
+  background: -webkit-linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('bg.png');
+  background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('bg.png');
+  background-size: auto 100%;
+}
+
+/* line 17, ../../sass/export/index.scss */
+.title {
+  display: inline-block;
+  font-size: 45px;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+/* line 22, ../../sass/export/index.scss */
+.title span {
+  line-height: 64px;
+  top: 6px;
+  margin-left: 24px;
+  position: relative;
+}
+
+/* line 30, ../../sass/export/index.scss */
+form.email-upload {
+  width: 240px;
+}
+/* line 33, ../../sass/export/index.scss */
+form.email-upload input {
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: lighter;
+  background: transparent;
+  border: 1px solid #F35C5D;
+}
+/* line 40, ../../sass/export/index.scss */
+form.email-upload input:focus {
+  border-color: #F35C5D;
+  -moz-box-shadow: rgba(0, 0, 0, 0.075) 0 1px 1px inset, #F35C5D 0 0 8px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.075) 0 1px 1px inset, #F35C5D 0 0 8px;
+  box-shadow: rgba(0, 0, 0, 0.075) 0 1px 1px inset, #F35C5D 0 0 8px;
+}
+/* line 61, ../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form.email-upload input:-moz-placeholder {
+  color: #F35C5D;
+  font-weight: lighter;
+  text-align: center;
+}
+/* line 64, ../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form.email-upload input::-moz-placeholder {
+  color: #F35C5D;
+  font-weight: lighter;
+  text-align: center;
+}
+/* line 67, ../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form.email-upload input:-ms-input-placeholder {
+  color: #F35C5D;
+  font-weight: lighter;
+  text-align: center;
+}
+/* line 56, ../../../../.rvm/gems/ruby-2.1.2/gems/compass-core-1.0.3/stylesheets/compass/css3/_user-interface.scss */
+form.email-upload input::-webkit-input-placeholder {
+  color: #F35C5D;
+  font-weight: lighter;
+  text-align: center;
+}
+/* line 52, ../../sass/export/index.scss */
+form.email-upload .submit-button {
+  width: 240px;
+  background-color: #F35C5D;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* line 61, ../../sass/export/index.scss */
+.footer {
+  margin-top: 80px;
+  font-size: 16px;
+  font-weight: lighter;
+}
+/* line 66, ../../sass/export/index.scss */
+.footer a, .footer a:visited, .footer a:hover, .footer a:active {
+  color: #F35C5D;
+  text-decoration: none;
+}
+
+/* line 72, ../../sass/export/index.scss */
+.main.spacing {
+  height: 16%;
+}
