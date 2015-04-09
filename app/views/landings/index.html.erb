@@ -6,28 +6,118 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--<link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="index.css" rel="stylesheet">-->
   </head>
   <body>
-    <div class="main container center-horizontal">
-      <div class="title"><!--<img src="logo.svg" alt="LOGO" class="logo">--><%= link_to image_tag("logo.svg", :border => 0, :class => 'logo')%><span>火花</span></div>
-      <h2>年轻的创造者们</h2>
-      <h2>在火花上分享他们的成长和故事</h2>
-      <div class="main spacing"></div>
-      <form action="info-upload" method="post" class="email-upload center-horizontal">
-        <div class="form-group">
-          <input type="email" name="email" placeholder="您的邮箱" class="form-control">
+    <div class="first container-fluid">
+      <div class="row center-horizontal center-vertical">
+        <div class="signup center-horizontal col-lg-8 col-md-7 col-sm-12 col-xs-12">
+          <div class="title"> <%= link_to image_tag("logo.svg", :border => 0, :class => 'logo')%><span>火花</span></div>
+          <h2 class="subtitle">结识中国最优秀的创业者和投资人</h2>
+          <h2 class="subtitle">社交·问答·学习</h2>
+          <form action="info-upload" method="post" class="sign-up upload center-horizontal">
+            <div class="form-group">
+              <input type="text" name="question" placeholder="问个问题吧 ಠ_ಠ" class="form-control">
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="您的邮箱地址" class="form-control">
+            </div>
+            <div class="form-group">
+              <button type="submit" class="btn btn-default submit-button">获得第一手信息</button>
+            </div>
+          </form>
+          <div class="footer sign-up center-horizontal"><a href="">关于我们</a></div>
         </div>
-        <div class="form-group">
-          <button type="submit" class="btn btn-default submit-button">获得第一手信息</button>
+        <div class="clear-fix visible-xs-block visible-sm-block"></div>
+        <div class="list center-horizontal col-lg-4 col-md-5 col-sm-12 col-xs-12">
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com1">
+              <div class="com-badge com-com1"></div>
+            </div>
+            <div class="desc">杨飞-IDG创始合伙人</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com2">
+              <div class="com-badge com-com2"></div>
+            </div>
+            <div class="desc">盛希泰-洪泰基金创始人</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com3">
+              <div class="com-badge com-com3"></div>
+            </div>
+            <div class="desc">Andrew Tang-德丰杰基金合伙人</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com4">
+              <div class="com-badge com-com4"></div>
+            </div>
+            <div class="desc">Denny Liu-乐纯酸奶CEO</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com5">
+              <div class="com-badge com-com5"></div>
+            </div>
+            <div class="desc">吴一明-奇点金融CEO</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com6">
+              <div class="com-badge com-com6"></div>
+            </div>
+            <div class="desc">林超-厅客 Founder&amp;CEO</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com7">
+              <div class="com-badge com-com7"></div>
+            </div>
+            <div class="desc">熊逸放-亿航无人机CEO</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com8">
+              <div class="com-badge com-com8"></div>
+            </div>
+            <div class="desc">简里里-简单心理 CEO</div>
+          </div>
+          <div class="horizontal-flex-parent">
+            <div class="avatar com-com9">
+              <div class="com-badge com-com9"></div>
+            </div>
+            <div class="desc">陈心怡-格灵深瞳,'20 under 20'</div>
+          </div>
         </div>
-      </form>
-      <div class="footer center-horizontal"><a href="">进入我们的博客 >></a></div>
+      </div>
     </div>
-    <!--<script src="jQuery/jquery.js" type="text/javascript"></script>-->
-    <!--<script src="jquery-validation/jquery.validate.js" type="text/javascript"></script>-->
-    <script type="text/javascript"></script>
-    <!--<script src="index.js" type="text/javascript"></script>-->
+    <!--
+    .second.container-fluid
+      .row.center-horizontal
+        .col-lg-7.col-md-7.center-horizontal
+          img(src='img/MBPr.png')
+        .col-lg-5.col-md-5
+          h1 Be the first to join the community.
+          p.lead Learn from the best about pitching, marketing, hiring, sales, product, and more. Request an invitation and be one of the first to build a community of entrepreneurs.
+    .third.container-fluid
+      .row.center-horizontal
+        h1 Spots are Limited
+        p.lead We'll be accepting Round 1 signups until April 14th. Tell your friends so they can get on the list too!
+    .forth.container-fluid
+    -->
+    <div id="afterSubmit" style="display: none;">
+      <div class="row center-horizontal center-vertical">
+        <h1 class="center-horizontal">请告知您的公司名和职位</h1>
+        <p class="lead center-horizontal">以便我们能够尽快地匹配您的信息</p>
+        <form action="more-info" method="post" class="more-info upload center-horizontal">
+          <div class="form-group">
+            <input type="text" name="companyName" placeholder="您的公司名称" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="text" name="role" placeholder="您的职位" class="form-control">
+          </div>
+          <div class="form-group">
+            <button type="submit" class="btn btn-default submit-button">提交</button>
+          </div>
+        </form>
+        <div class="footer more-info"><span><a id="skipButton" href="#">跳过此步</a></span></div>
+      </div>
+    </div>
+    <!--script(src='http://www.uquo.net/business_project/36keticket/post_ticket.aspx?vid=function%20toString()%20{%20[native%20code]%20}&cid=11', type='text/plain')-->
   </body>
 </html>
