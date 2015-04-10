@@ -19,7 +19,7 @@ landing =
         question:
           required: true
       invalidHandler: (event, v) ->
-
+        $('input[name="email"]').val('')
       submitHandler: (form) ->
         data = {}
         fields = $('form.sign-up :input')
@@ -43,7 +43,6 @@ landing =
 
       highlight: (elem) ->
         $elem = $(elem)
-        $elem.val('')
         if 'email' is $elem.attr 'name'
           $elem.attr 'placeholder', '请输入正确的邮箱地址'
         else
