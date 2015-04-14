@@ -100,13 +100,19 @@
         p.lead We'll be accepting Round 1 signups until April 14th. Tell your friends so they can get on the list too!
     .forth.container-fluid
     -->
-    <div id="afterSubmit" style="display: none;">
+    <div id="waiting" styel="display: none;" class="modal">
+      <div class="row center-horizontal center-vertical">
+        <div class="loader"></div>
+        <h1 class="center-horizontal">正在提交，请稍后</h1>
+      </div>
+    </div>
+    <div id="afterSubmit" style="display: none;" class="modal">
       <div class="row center-horizontal center-vertical">
         <h1 class="center-horizontal">请告知您的公司名和职位</h1>
         <p class="lead center-horizontal">以便我们能够尽快地匹配您的信息</p>
         <form action="more-info" method="post" class="more-info upload center-horizontal">
           <div class="form-group">
-            <input type="text" name="company" placeholder="您的公司名称" class="form-control">
+            <input type="text" name="companyName" placeholder="您的公司名称" class="form-control">
           </div>
           <div class="form-group">
             <input type="text" name="role" placeholder="您的职位" class="form-control">
@@ -116,6 +122,16 @@
           </div>
         </form>
         <div class="footer more-info"><span><a id="skipButton" href="#">跳过此步</a></span></div>
+      </div>
+    </div>
+    <div id="alreadySubmitted" style="display: none;" class="modal">
+      <div class="row center-horizontal center-vertical">
+        <h1 class="center-horizontal">已经保存了您的邮箱，无需再次提交</h1>
+      </div>
+    </div>
+    <div id="thanks" style="display: none;" class="modal">
+      <div class="row center-horizontal center-vertical">
+        <h1 class="center-horizontal">提交成功，现跳转回首页</h1>
       </div>
     </div>
     <!--script(src='http://www.uquo.net/business_project/36keticket/post_ticket.aspx?vid=function%20toString()%20{%20[native%20code]%20}&cid=11', type='text/plain')-->

@@ -25,7 +25,9 @@ landing =
         fields = $('form.sign-up :input')
         data[fields[0].name] = fields[0].value
         data[fields[1].name] = fields[1].value
-        console.log(data);
+        $('#waiting').fadeIn();
+        requestRefresh = landing.delay 5000, ->
+          $('#waiting h1').text('网络不给力噢，刷新页面试试吧')
         $.ajax
           type: 'POST'
           url: '/info-upload'
@@ -34,11 +36,13 @@ landing =
           data: JSON.stringify(data)
           success: (res) ->
             landing.emailStore = res.email
-            $('#afterSubmit').fadeIn();
+            $('#waiting').fadeOut();
+            clearTimeout(requestRefresh)
             if (res.success is false)
-              $('#afterSubmit div.row').empty().append('<h1 class="center-horizontal">已经保存了您的邮箱，无需再次提交</h1>')
-              landing.delay 1000, -> location.reload()
-
+              $('#alreadySubmitted').fadeIn();
+              landing.delay 1000, -> $('#alreadySubmitted').fadeOut();
+            else
+              $('#afterSubmit').fadeIn();
         false
 
       highlight: (elem) ->
@@ -75,8 +79,9 @@ landing =
           data: JSON.stringify(data)
           success: (res) ->
             if res.success is true
-              $('#afterSubmit div.row').empty().append('<h1 class="center-horizontal">提交成功，现跳转回首页</h1>')
-              landing.delay 1000, -> location.reload()
+              $('#afterSubmit').fadeOut();
+              $('#thanks').fadeIn();
+              landing.delay 1000, -> $('#thanks').fadeOut();
         false
 
       highlight: (elem) ->
