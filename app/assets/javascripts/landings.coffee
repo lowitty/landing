@@ -25,7 +25,7 @@ landing =
         fields = $('form.sign-up :input')
         data[fields[0].name] = fields[0].value
         data[fields[1].name] = fields[1].value
-        $('#waiting').fadeIn();
+        $('#waiting').fadeIn()
         requestRefresh = landing.delay 5000, ->
           $('#waiting h1').text('网络不给力噢，刷新页面试试吧')
         $.ajax
@@ -36,13 +36,13 @@ landing =
           data: JSON.stringify(data)
           success: (res) ->
             landing.emailStore = res.email
-            $('#waiting').fadeOut();
+            $('#waiting').fadeOut()
             clearTimeout(requestRefresh)
             if (res.success is false)
-              $('#alreadySubmitted').fadeIn();
-              landing.delay 1000, -> $('#alreadySubmitted').fadeOut();
+              $('#alreadySubmitted').fadeIn()
+              landing.delay 3000, -> $('#alreadySubmitted').fadeOut()
             else
-              $('#afterSubmit').fadeIn();
+              $('#afterSubmit').fadeIn()
         false
 
       highlight: (elem) ->
@@ -79,9 +79,11 @@ landing =
           data: JSON.stringify(data)
           success: (res) ->
             if res.success is true
-              $('#afterSubmit').fadeOut();
-              $('#thanks').fadeIn();
-              landing.delay 1000, -> $('#thanks').fadeOut();
+              $('#thanks').fadeIn()
+              landing.delay 3000, ->
+                $('#thanks').fadeOut()
+                $('#afterSubmit').fadeOut()
+                $('form.sign-up.upload')[0].reset()
         false
 
       highlight: (elem) ->
@@ -95,7 +97,8 @@ landing =
         true
 
     $('#skipButton').click (e) ->
-      $('#afterSubmit').fadeOut();
+      $('form.sign-up.upload')[0].reset()
+      $('#afterSubmit').fadeOut()
 
 $(document).ready landing.init
 $(document).on 'page:load', landing.init
