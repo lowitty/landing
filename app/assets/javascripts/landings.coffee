@@ -113,7 +113,7 @@ pushingEffect =
       $words = $('span.push-wrapper b')
       $words.eq(@wordIndex).attr('class', 'is-hidden')
       ++@wordIndex
-      @wordIndex %= 3
+      @wordIndex %= 5
       $words.eq(@wordIndex).attr('class', 'is-visible')
 
 
