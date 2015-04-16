@@ -2,11 +2,15 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 
-landing =
-  emailStore: ''
+util =
   delay: (ms, func) ->
     setTimeout func, ms
+  loop: (ms, func) ->
+    setInterval func, ms
+landing =
+  emailStore: ''
   init: ->
+    pushingEffect.init()
     # email validation
     $('form.sign-up.upload').submit (e) ->
       e.preventDefault()
@@ -26,7 +30,7 @@ landing =
         data[fields[0].name] = fields[0].value
         data[fields[1].name] = fields[1].value
         $('#waiting').fadeIn()
-        requestRefresh = landing.delay 5000, ->
+        requestRefresh = util.delay 5000, ->
           $('#waiting h1').text('网络不给力噢，刷新页面试试吧')
         $.ajax
           type: 'POST'
@@ -40,7 +44,7 @@ landing =
             clearTimeout(requestRefresh)
             if (res.success is false)
               $('#alreadySubmitted').fadeIn()
-              landing.delay 3000, -> $('#alreadySubmitted').fadeOut()
+              util.delay 3000, -> $('#alreadySubmitted').fadeOut()
             else
               $('#afterSubmit').fadeIn()
         false
@@ -80,10 +84,11 @@ landing =
           success: (res) ->
             if res.success is true
               $('#thanks').fadeIn()
-              landing.delay 3000, ->
+              util.delay 3000, ->
                 $('#thanks').fadeOut()
                 $('#afterSubmit').fadeOut()
                 $('form.sign-up.upload')[0].reset()
+                $('form.more-info.upload')[0].reset()
         false
 
       highlight: (elem) ->
@@ -99,6 +104,18 @@ landing =
     $('#skipButton').click (e) ->
       $('form.sign-up.upload')[0].reset()
       $('#afterSubmit').fadeOut()
+
+
+pushingEffect =
+  wordIndex: 0
+  init: ->
+    util.loop 3000, =>
+      $words = $('span.push-wrapper b')
+      $words.eq(@wordIndex).attr('class', 'is-hidden')
+      ++@wordIndex
+      @wordIndex %= 3
+      $words.eq(@wordIndex).attr('class', 'is-visible')
+
 
 $(document).ready landing.init
 $(document).on 'page:load', landing.init
