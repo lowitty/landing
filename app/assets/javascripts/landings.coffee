@@ -107,9 +107,11 @@ landing =
 
 
 pushingEffect =
+  loopId: null
   wordIndex: 0
   init: ->
-    util.loop 3000, =>
+    clearInterval @loopId if @loopId isnt null
+    @loopId = util.loop 3000, =>
       $words = $('span.push-wrapper b')
       $words.eq(@wordIndex).attr('class', 'is-hidden')
       ++@wordIndex

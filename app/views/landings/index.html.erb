@@ -2,7 +2,9 @@
 <html lang="zh">
   <head>
     <title>火花</title>
-    <link href="faviconspark.png" rel="shortcut icon" type="image/vnd.microsoft.icon">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,7 +27,7 @@
               <button type="submit" class="btn btn-default submit-button">获得第一手信息</button>
             </div>
           </form>
-          <div class="footer sign-up center-horizontal"><a href="">关于我们</a></div>
+          <div class="footer sign-up center-horizontal"><a href="#" data-toggle="modal" data-target="#qrcode">关于我们</a></div>
         </div>
         <div class="clear-fix visible-xs-block visible-sm-block"></div>
         <div class="list center-horizontal col-lg-4 col-md-5 col-sm-12 col-xs-12">
@@ -39,7 +41,7 @@
             <div class="avatar com-com2">
               <div class="com-badge com-com2"></div>
             </div>
-            <div class="desc">盛希泰-洪泰基金创始人</div>
+            <div class="desc">朱建寰-IDG资本合伙人</div>
           </div>
           <div class="horizontal-flex-parent">
             <div class="avatar com-com3">
@@ -69,7 +71,7 @@
             <div class="avatar com-com7">
               <div class="com-badge com-com7"></div>
             </div>
-            <div class="desc">熊逸放-亿航无人机CEO</div>
+            <div class="desc">刘俊彦-环信CEO</div>
           </div>
           <div class="horizontal-flex-parent">
             <div class="avatar com-com8">
@@ -100,13 +102,13 @@
         p.lead We'll be accepting Round 1 signups until April 14th. Tell your friends so they can get on the list too!
     .forth.container-fluid
     -->
-    <div id="waiting" styel="display: none;" class="modal">
+    <div id="waiting" style="display: none;" class="modal-full">
       <div class="row center-horizontal center-vertical">
         <div class="loader"></div>
         <h1 class="center-horizontal">正在提交，请稍候</h1>
       </div>
     </div>
-    <div id="afterSubmit" style="display: none;" class="modal">
+    <div id="afterSubmit" style="display: none;" class="modal-full">
       <div class="row center-horizontal center-vertical">
         <h1 class="center-horizontal">请告知您的公司名和职位</h1>
         <p class="lead center-horizontal">以便我们能够尽快地匹配您的信息</p>
@@ -124,14 +126,24 @@
         <div class="footer more-info"><span><a id="skipButton" href="#">跳过此步</a></span></div>
       </div>
     </div>
-    <div id="alreadySubmitted" style="display: none;" class="modal">
+    <div id="alreadySubmitted" style="display: none;" class="modal-full">
       <div class="row center-horizontal center-vertical">
         <h1 class="center-horizontal">已经保存了您的邮箱，无需再次提交</h1>
       </div>
     </div>
-    <div id="thanks" style="display: none;" class="modal">
+    <div id="thanks" style="display: none;" class="modal-full">
       <div class="row center-horizontal center-vertical">
         <h1 class="center-horizontal">提交成功，现跳转回首页</h1>
+      </div>
+    </div>
+    <div id="qrcode" tabindex="-1" role="dialog" aria-labelledby="qrcodeLabel" aria-hidden="true" class="modal fade">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header center-horizontal">
+            <h3>请关注我们的微信平台</h3>
+          </div>
+          <div class="modal-body center-horizontal"><%= image_tag "qrcode.jpg", alt: "QrCode", class: "img-thumbnail img-responsive" %></div>
+        </div>
       </div>
     </div>
     <!--script(src='http://www.uquo.net/business_project/36keticket/post_ticket.aspx?vid=function%20toString()%20{%20[native%20code]%20}&cid=11', type='text/plain')-->
