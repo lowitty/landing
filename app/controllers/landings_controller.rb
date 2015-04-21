@@ -18,7 +18,7 @@ class LandingsController < ApplicationController
     @mailinfo = Mailinfo.find_by email: req_email
     render json: {success: false} and return if @mailinfo.nil?
 
-    @mailinfo.company = params.permit(:company)[:company]
+    @mailinfo.company = params.permit(:companyName)[:companyName]
     @mailinfo.role = params.permit(:role)[:role]
 
     respond[:success] = @mailinfo.save
