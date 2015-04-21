@@ -54,7 +54,7 @@ landing =
         if 'email' is $elem.attr 'name'
           $elem.attr 'placeholder', '请输入正确的邮箱地址'
         else
-          $elem.attr 'placeholder', '请输入您的问题'
+          $elem.attr 'placeholder', '请输入您的中文名'
       errorPlacement: (err, elem) ->
         true
 
