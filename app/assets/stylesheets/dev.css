@@ -11,6 +11,6 @@
  * file per style scope.
  *
  *= require bootstrap/css/bootstrap.min
- *= require landings.css
+ *= require dev-landings.css
  *= require_self
  */

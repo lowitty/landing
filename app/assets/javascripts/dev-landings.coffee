@@ -10,6 +10,7 @@ util =
 landing =
   emailStore: ''
   init: ->
+    detailListEffect.init()
     pushingEffect.init()
     # email validation
     $('form.sign-up.upload').submit (e) ->
@@ -117,7 +118,14 @@ pushingEffect =
       ++@wordIndex
       @wordIndex %= 5
       $words.eq(@wordIndex).attr('class', 'is-visible')
-
+detailListEffect =
+  activated: null
+  init: ->
+    detailListEffect.activated = $('.list-item.active')
+    $('.list-item').click ->
+      detailListEffect.activated.attr 'class', 'list-item container-fluid'
+      detailListEffect.activated = $(this)
+      detailListEffect.activated.attr 'class', 'list-item container-fluid active'
 
 $(document).ready landing.init
 $(document).on 'page:load', landing.init
