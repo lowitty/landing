@@ -63,7 +63,7 @@ landing =
       false
     .validate
       rules:
-        company:
+        companyName:
           required: true
         role:
           required: true
@@ -94,7 +94,7 @@ landing =
       highlight: (elem) ->
         $elem = $(elem)
         $elem.val('')
-        if 'email' is $elem.attr 'company'
+        if 'companyName' is $elem.attr 'name'
           $elem.attr 'placeholder', '请输入您的公司名称'
         else
           $elem.attr 'placeholder', '请输入您的职位'
