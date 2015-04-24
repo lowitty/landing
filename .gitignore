@@ -54,3 +54,7 @@ config/secrets.yml
 
 # Ignore pow environment settings
 .powenv
+
+#secret
+
+./config/secrets.yml
