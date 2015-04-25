@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   post '/info-upload', to: "landings#savemail"
   post '/more-info', to: "landings#moreinfo"
   get '/info-upload', to: "landings#index"
+  get '/dev', to: "dev#index"
   get '/mails22', to: "landings#show"
 
   # Example of regular route:
