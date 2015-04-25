@@ -432,7 +432,7 @@ html {
 @media (min-width: 1200px) {
     .first>.row {
         width: 1080px;
-        height: 720px
+        height: 640px
     }
 }
 .first .list {
